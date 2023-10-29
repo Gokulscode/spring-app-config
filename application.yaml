@@ -10,3 +10,11 @@ management:
   tracing:
     sampling:
       probability: 1.0
+logging:
+  level:
+    root: INFO # Set the root log level to INFO, adjust as needed
+  file:
+    name: my-application.log # Specify the log file name
+  pattern:
+    console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - [TraceId: %X{traceId}, SpanId: %X{spanId}] %msg%n"
+    file: "%d{HH:mm: ss.SSS} [%thread] %-5level %logger{36} - [TraceId: %X{traceId}, SpanId: %X{spanId}] %msg%n"
